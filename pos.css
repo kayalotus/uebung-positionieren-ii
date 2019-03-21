@@ -19,7 +19,7 @@ section{
 	border-bottom: 1px solid #000;
 	min-height: 600px;
 	margin-top: 2rem;
-
+	position: relative;
 }
 
 .wrapper{
@@ -40,21 +40,45 @@ section{
 
 .electric-purple{
 	background: #C200FB;
-
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -100px;
+	margin-top: -100px;
 }
 
 .raspberry{
 	background: #EC0868;
-	
+	position: absolute;
+  right: 0;
+	/* optional: button: 200px um sicher zu gehen, dass es über ferrari-red positioniert ist */
+	bottom: 0;
+	z-index: 1;
 }
 
 .ferrari-red{
 	background: #FC2F00;
-	
-
+	position: absolute;
+	right: 0;
+	top: 0;
 }
 
 .black{
 	background: #000;
+	position: absolute;
+	bottom: 0;
+	left: 0;
 }
 
+/* Hier machen wir jetzt Spaß und wollen, dass sich electric-purple bewegt, wenn man mit der Maus drüber geht */
+section:hover .electric-purple{
+	left: 300%;
+	margin-left: 100px;
+	border-radius: 50%;
+	background: teal;
+	opacity: 0;
+}
+
+section .electric-purple{
+	transition: 3s all ease;
+}
